@@ -1,6 +1,9 @@
-package figures
+package canvas
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestCreateCanva(t *testing.T) {
 	h := 10
@@ -11,6 +14,7 @@ func TestCreateCanva(t *testing.T) {
 	}
 
 	if c.W != w || c.H != h {
+		fmt.Println(c.Render())
 		t.Fatalf("Expected %dx%d, got %dx%d", w, h, c.W, c.H)
 	}
 }
