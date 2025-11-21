@@ -7,5 +7,7 @@ import (
 
 func main() {
 	err := cmd.NewListener()
-	fmt.Println(err)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
