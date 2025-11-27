@@ -21,7 +21,7 @@ func NewListener() error {
 	}
 
 	fmt.Println("Canvas created:")
-	fmt.Println(c.Render())
+	fmt.Println(Render(c))
 
 	printHelp()
 
@@ -67,7 +67,7 @@ func NewListener() error {
 				fmt.Println("Error creating canvas:", err)
 				continue
 			}
-			fmt.Println(c.Render())
+			fmt.Println(Render(c))
 
 		case "L":
 			if len(args) != 2 {
@@ -89,7 +89,7 @@ func NewListener() error {
 				continue
 			}
 
-			fmt.Println(c.Render())
+			fmt.Println(Render(c))
 
 		case "R":
 			if len(args) != 3 {
@@ -117,7 +117,7 @@ func NewListener() error {
 				continue
 			}
 
-			fmt.Println(c.Render())
+			fmt.Println(Render(c))
 
 		case "F":
 			if len(args) != 1 {
@@ -137,7 +137,7 @@ func NewListener() error {
 				continue
 			}
 
-			fmt.Println(c.Render())
+			fmt.Println(Render(c))
 
 		default:
 			fmt.Println("Unknown command:", cmd)

@@ -2,7 +2,7 @@ package canvas
 
 import "fmt"
 
-func (c Canvas) NewLine(p1, p2 []int) error {
+func (c *Canvas) NewLine(p1, p2 []int) error {
 	if len(p1) != 2 || len(p2) != 2 {
 		return fmt.Errorf("this is a 2d canvas, Use a point with two coordinates")
 	}

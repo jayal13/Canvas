@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"canvas/canvas"
 	"fmt"
 	"strconv"
 	"strings"
@@ -23,7 +24,6 @@ func parsePoint(s string) ([]int, error) {
 		return nil, fmt.Errorf("invalid point format: %s", s)
 	}
 
-	// quitar paréntesis
 	inner := s[1 : len(s)-1]
 
 	parts := strings.Split(inner, ",")
@@ -39,4 +39,15 @@ func parsePoint(s string) ([]int, error) {
 	}
 
 	return []int{x, y}, nil
+}
+
+func Render(c *canvas.Canvas) string {
+	var b strings.Builder
+	for y := 0; y < c.H; y++ {
+		for x := 0; x < c.W; x++ {
+			b.WriteRune(c.Grid[y][x])
+		}
+		b.WriteByte('\n')
+	}
+	return b.String()
 }

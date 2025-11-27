@@ -2,7 +2,7 @@ package canvas
 
 import "fmt"
 
-func (c Canvas) NewRectangle(p []int, w int, h int) error {
+func (c *Canvas) NewRectangle(p []int, w int, h int) error {
 	if len(p) > 2 {
 		return fmt.Errorf("this is a 2d canvas, Use a point with two coordinates")
 	}
